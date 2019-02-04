@@ -1,10 +1,23 @@
 import time
 import subprocess
 import re
+import mysql.connector
 from pprint import pprint
 
-report_path = "/mnt/c/Users/agustin.parmisano.MJGM/Documents/programillas/server_status_checker/file_system_checker/tripwire"
-report_file_name = "twr_report3.txt"
+#FALTA:
+#tirar un contador de tiempo
+#tirar tripwire check (esperar que termine y verificar que no falló antes de seguir)
+#tirar tripwire print
+#tirar el script este para hacer json
+#tirar script que se fija los puertos y los demonios corriendo (en json)
+#tirar script que se fija el procesamiento, la ram, tamaño de particiones y la red (en json)
+#logear lo que tardo en hacer todo con el contador de tiempo y agregarlo al json
+#tirar para enviar el json a la api rest
+#mover el reporte a la carpeta old_reports con la fecha del reporte
+#finalizar hasta proxima ejecución
+
+report_path = "/mnt/c/Users/agustin.parmisano.MJGM/Documents/GitHub/secsysmon/twr_file_system_ids/twr_reports/"
+report_file_name = "twr_report_04021029-1234.txt"
 report_path += "/" + report_file_name
 print report_path
 
@@ -61,4 +74,3 @@ for row in rows_cleaned[2:-5]:
         rule_path = {}
 
 pprint(rows_formated)
-print(rule_paths)
